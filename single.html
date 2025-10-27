@@ -1,0 +1,370 @@
+<!--Un Diseño por W3layouts
+Autor: W3layout
+URL del Autor: http://w3layouts.com
+Licencia: Creative Commons Attribution 3.0 Unported
+URL de Licencia: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Individual :: w3layouts</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Valor seleccionado es: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+     <!----slider de detalles de producto--->
+				<!-- Incluir los archivos de Etalage -->
+					<link rel="stylesheet" href="css/etalage.css">
+					<script src="js/jquery.etalage.min.js"></script>
+				<!-- Incluir los archivos de Etalage -->
+				<script>
+						jQuery(document).ready(function($){
+			
+							$('#etalage').etalage({
+								thumb_image_width: 300,
+								thumb_image_height: 400,
+								
+								show_hint: true,
+								click_callback: function(image_anchor, instance_id){
+									alert('Ejemplo de callback:\nHiciste clic en una imagen con el ancla: "'+image_anchor+'"\n(en la instancia de Etalage: "'+instance_id+'")');
+								}
+							});
+							// Esto es para el ejemplo de la lista desplegable:
+							$('.dropdownlist').change(function(){
+								etalage_show( $(this).find('option:selected').attr('class') );
+							});
+
+					});
+				</script>
+				<!----//slider de detalles de producto--->	
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="logo">
+						<a href="index.html"><img src="images/logo.png" alt="Logo de la Tienda"/></a>
+					 </div>
+					 <div class="menu">
+						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="Menú" /></a>
+						    <ul class="nav" id="nav">
+						    	<li class="current"><a href="shop.html">Tienda</a></li>
+						    	<li><a href="team.html">Equipo</a></li>
+						    	<li><a href="experiance.html">Experiencia</a></li>
+								<li><a href="contact.html">Contacto</a></li>								
+								<div class="clear"></div>
+							</ul>
+							<script type="text/javascript" src="js/responsive-nav.js"></script>
+				    </div>							
+	    		    <div class="clear"></div>
+	    	    </div>
+	            <div class="header_right">
+	    		  <!-- inicio de búsqueda-->
+				   <div class="search-box">
+							<div id="sb-search" class="sb-search">
+								<form>
+									<input class="sb-search-input" placeholder="Ingresa tu término de búsqueda..." type="search" name="search" id="search">
+									<input class="sb-search-submit" type="submit" value="">
+									<span class="sb-icon-search"> </span>
+								</form>
+							</div>
+						</div>
+						<!----scripts de búsqueda---->
+						<script src="js/classie.js"></script>
+						<script src="js/uisearch.js"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+				    <ul class="icon1 sub-icon1 profile_img">
+					 <li><a class="active-icon c1" href="#"> </a>
+						<ul class="sub-icon1 list">
+						  <div class="product_control_buttons">
+						  	<a href="#"><img src="images/edit.png" alt="Editar"/></a>
+						  		<a href="#"><img src="images/close_edit.png" alt="Cerrar"/></a>
+						  </div>
+						   <div class="clear"></div>
+						  <li class="list_img"><img src="images/1.jpg" alt=""/></li>
+						  <li class="list_desc"><h4><a href="#">Tabla de Snowboard</a></h4><span class="actual">1 x
+                          $12.000</span></li>
+						  <div class="login_buttons">
+							 <div class="check_button"><a href="checkout.html">Pagar</a></div>
+							 <div class="login_button"><a href="login.html">Ingresar</a></div>
+							 <div class="clear"></div>
+						  </div>
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+		        <div class="clear"></div>
+	       </div>
+	      </div>
+		 </div>
+	    </div>
+	  </div>
+     <div class="main">
+      <div class="shop_top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 single_left">
+				   <div class="single_image">
+					     <ul id="etalage">
+							<li>
+								<a href="#">
+									<img class="etalage_thumb_image" src="images/3.jpg" />
+									<img class="etalage_source_image" src="images/3.jpg" />
+								</a>
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/4.jpg" />
+								<img class="etalage_source_image" src="images/4.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/5.jpg" />
+								<img class="etalage_source_image" src="images/5.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/6.jpg" />
+								<img class="etalage_source_image" src="images/6.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/7.jpg" />
+								<img class="etalage_source_image" src="images/7.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/8.jpg" />
+								<img class="etalage_source_image" src="images/8.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/9.jpg" />
+								<img class="etalage_source_image" src="images/9.jpg" />
+							</li>
+						</ul>
+					    </div>
+				        <!-- fin del slider de producto -->
+				        <div class="single_right">
+				        	<h3>Tabla de Snowboard Pro Model</h3>
+				        	<p class="m_10">Descubre la tabla definitiva para conquistar cualquier terreno. Diseñada con materiales de alta tecnología, ofrece una flexibilidad y respuesta incomparables. Ideal para riders que buscan llevar su rendimiento al siguiente nivel, desde parques hasta fuera de pista.</p>
+				        	<ul class="options">
+								<h4 class="m_12">Selecciona una Talla (cm)</h4>
+								<li><a href="#">151</a></li>
+								<li><a href="#">148</a></li>
+								<li><a href="#">156</a></li>
+								<li><a href="#">145</a></li>
+								<li><a href="#">162(w)</a></li>
+								<li><a href="#">163</a></li>
+							</ul>
+				        	<ul class="product-colors">
+								<h3>Colores Disponibles</h3>
+								<li><a class="color1" href="#"><span> </span></a></li>
+								<li><a class="color2" href="#"><span> </span></a></li>
+								<li><a class="color3" href="#"><span> </span></a></li>
+								<li><a class="color4" href="#"><span> </span></a></li>
+								<li><a class="color5" href="#"><span> </span></a></li>
+								<li><a class="color6" href="#"><span> </span></a></li>
+								<div class="clear"> </div>
+							</ul>
+							<div class="btn_form">
+							   <form>
+								 <input type="submit" value="Comprar Ahora" title="">
+							  </form>
+							</div>
+							<ul class="add-to-links">
+    			              <li><img src="images/wish.png" alt=""><a href="#">Añadir a la lista de deseos</a></li>
+    			            </ul>
+							<div class="social_buttons">
+								<h4>95 Artículos</h4>
+								<button type="button" class="btn1 btn1-default1 btn1-twitter" onclick="">
+					              <i class="icon-twitter"></i> Twittear
+					            </button>
+					            <button type="button" class="btn1 btn1-default1 btn1-facebook" onclick="">
+					              <i class="icon-facebook"></i> Compartir
+					            </button>
+					             <button type="button" class="btn1 btn1-default1 btn1-google" onclick="">
+					              <i class="icon-google"></i> Google+
+					            </button>
+					            <button type="button" class="btn1 btn1-default1 btn1-pinterest" onclick="">
+					              <i class="icon-pinterest"></i> Pinear
+					            </button>
+					        </div>
+				        </div>
+				        <div class="clear"> </div>
+				</div>
+				<div class="col-md-3">
+				  <div class="box-info-product">
+					<p class="price2">$130.250</p>
+					       <ul class="prosuct-qty">
+								<span>Cantidad:</span>
+								<select>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+								</select>
+							</ul>
+							<button type="submit" name="Submit" class="exclusive">
+							   <span>Añadir al carrito</span>
+							</button>
+				   </div>
+			   </div>	
+			</div>		
+			<div class="desc">
+			   	<h4>Descripción Detallada</h4>
+			   	<p>Esta tabla de snowboard ha sido fabricada con un núcleo de madera de álamo y bambú, que proporciona una combinación perfecta de ligereza y resistencia. Su perfil híbrido combina camber bajo los pies para un agarre preciso en los cantos y rocker en la punta y la cola para una flotación superior en nieve polvo. La base sinterizada de alta densidad asegura una velocidad máxima en todo tipo de condiciones. Además, los cantos de acero reforzado ofrecen una durabilidad excepcional para rails y cajones. Es la elección ideal para riders intermedios y avanzados que exigen versatilidad y rendimiento.</p>
+			</div>
+			<div class="row">
+				<h4 class="m_11">Productos Relacionados en la Misma Categoría</h4>
+				<div class="col-md-4 product1">
+					<img src="images/s1.jpg" class="img-responsive" alt=""/> 
+					<div class="shop_desc">
+						<h3><a href="single.html">Tabla Freestyle</a></h3>
+						<p>Perfecta para trucos en el parque.</p>
+						<span class="reducedfrom">$66.000</span>
+						<span class="actual">$49.990</span><br>
+						<ul class="buttons">
+							<li class="cart"><a href="#">Añadir al Carrito</a></li>
+							<li class="shop_btn"><a href="#">Leer Más</a></li>
+							<div class="clear"> </div>
+					    </ul>
+				    </div>
+				</div>
+				<div class="col-md-4 product1">
+					<img src="images/s2.jpg" class="img-responsive" alt=""/> 
+					<div class="shop_desc">
+						<h3><a href="single.html">Esquís All-Mountain</a></h3>
+						<p>Versatilidad para toda la montaña.</p>
+						<span class="reducedfrom">$75.000</span>
+						<span class="actual">$55.990</span><br>
+						<ul class="buttons">
+							<li class="cart"><a href="#">Añadir al Carrito</a></li>
+							<li class="shop_btn"><a href="#">Leer Más</a></li>
+							<div class="clear"> </div>
+					    </ul>
+				    </div>
+				</div>
+				<div class="col-md-4">
+					<img src="images/s3.jpg" class="img-responsive" alt=""/> 
+					<div class="shop_desc">
+						<h3><a href="single.html">Tabla Freeride</a></h3>
+						<p>Ideal para nieve polvo y fuera de pista.</p>
+						<span class="reducedfrom">$89.000</span>
+						<span class="actual">$69.990</span><br>
+						<ul class="buttons">
+							<li class="cart"><a href="#">Añadir al Carrito</a></li>
+							<li class="shop_btn"><a href="#">Leer Más</a></li>
+							<div class="clear"> </div>
+					    </ul>
+				    </div>
+				</div>
+			</div>	
+	     </div>
+	   </div>
+	  </div>
+	  <div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Productos</h4>
+							<li><a href="#">Hombres</a></li>
+							<li><a href="#">Mujeres</a></li>
+							<li><a href="#">Jóvenes</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Sobre Nosotros</h4>
+							<li><a href="#">Trabajos y Prácticas</a></li>
+							<li><a href="#">Patrocinios</a></li>
+							<li><a href="#">Equipo</a></li>
+							<li><a href="#">Solicitar/Descargar Catálogo</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Atención al Cliente</h4>
+							<li><a href="#">Contáctanos</a></li>
+							<li><a href="#">Seguimiento de Envíos y Pedidos</a></li>
+							<li><a href="#">Devoluciones Fáciles</a></li>
+							<li><a href="#">Garantía</a></li>
+							<li><a href="#">Repuestos de Fijaciones</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Boletín</h4>
+							<div class="footer_search">
+				    		   <form>
+				    			<input type="text" value="Ingresa tu email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Ingresa tu email';}">
+				    			<input type="submit" value="Ir">
+				    		   </form>
+					        </div>
+							<ul class="social">	
+							  <li class="facebook"><a href="#"><span> </span></a></li>
+							  <li class="twitter"><a href="#"><span> </span></a></li>
+							  <li class="instagram"><a href="#"><span> </span></a></li>	
+							  <li class="pinterest"><a href="#"><span> </span></a></li>	
+							  <li class="youtube"><a href="#"><span> </span></a></li>										  				
+						    </ul>
+		   				</ul>
+					</div>
+				</div>
+				<div class="row footer_bottom">
+				    <div class="copy">
+			           <p>© 2025 Plantilla por Marcos-Oy</p>
+		            </div>
+					  <dl id="sample" class="dropdown">
+				        <dt><a href="#"><span>Cambiar Región</span></a></dt>
+				        <dd>
+				            <ul>
+				                <li><a href="#">Australia<img class="flag" src="images/as.png" alt="Bandera de Australia" /><span class="value">AU</span></a></li>
+				                <li><a href="#">Sri Lanka<img class="flag" src="images/srl.png" alt="" /><span class="value">SL</span></a></li>
+				                <li><a href="#">Nueva Zelanda<img class="flag" src="images/nz.png" alt="Bandera de Nueva Zelanda" /><span class="value">NZ</span></a></li>
+				                <li><a href="#">Pakistán<img class="flag" src="images/pk.png" alt="Bandera de Pakistán" /><span class="value">PK</span></a></li>
+				                <li><a href="#">Reino Unido<img class="flag" src="images/uk.png" alt="Bandera de Reino Unido" /><span class="value">UK</span></a></li>
+				                <li><a href="#">Estados Unidos<img class="flag" src="images/us.png" alt="Bandera de Estados Unidos" /><span class="value">US</span></a></li>
+				            </ul>
+				         </dd>
+	   				  </dl>
+   				</div>
+			</div>
+		</div>
+</body>	
+</html>
